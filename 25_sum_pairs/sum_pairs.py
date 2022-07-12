@@ -21,3 +21,19 @@ def sum_pairs(nums, goal):
         >>> sum_pairs([11, 20, 4, 2, 1, 5], 100)
         ()
     """
+
+    # utilizes set attribute of no repetetive numbers
+    numbers = set()
+
+    # iterates over nums list passed in
+    for num in nums:
+        difference = goal - num
+
+        # iterates over set of numbers looked at
+        if difference in numbers:
+            return (difference, num)
+
+        # adds numbers to set
+        numbers.add(num)
+    # if there are no solutions
+    return ()
